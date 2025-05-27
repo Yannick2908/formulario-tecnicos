@@ -9,7 +9,13 @@
 </head>
 <body>
     <h1>Formulario de Servicio</h1>
-    <form id="serviceForm">
+    <form 
+        id="serviceForm" 
+        action="https://script.google.com/macros/s/AKfycbx93x6GE7lZpKYHd2nJGBdmL9HoordBFpN82lAe5YnOXZl4TzwpgLet1SqSWFIOSnDc/exec" 
+        method="POST" 
+        enctype="multipart/form-data" 
+        target="dummyFrame"
+    >
         <label>Cliente:<input type="text" name="cliente" required></label>
         <label>Dirección:<input type="text" name="direccion" required></label>
         <label>Técnico:<input type="text" name="tecnico" required></label>
@@ -19,9 +25,11 @@
         <label>Subir video (opcional):<input type="file" name="video" accept="video/*"></label>
         <label>Firma del cliente:</label>
         <canvas id="firmaCanvas" width="300" height="150" style="border:1px solid #000;"></canvas>
+        <input type="hidden" name="firma" id="firmaInput">
         <button type="button" onclick="borrarFirma()">Borrar Firma</button>
-        <input type="submit" value="Enviar">
+        <input type="submit" value="Enviar" onclick="guardarFirma()">
     </form>
+    <iframe name="dummyFrame" style="display:none;"></iframe>
     <script src="script.js"></script>
 </body>
 </html>
