@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Servicio en Sitio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Formulario de Servicio</h1>
+    <form id="serviceForm">
+        <label>Cliente:<input type="text" name="cliente" required></label>
+        <label>Dirección:<input type="text" name="direccion" required></label>
+        <label>Técnico:<input type="text" name="tecnico" required></label>
+        <label>Trabajo realizado:<textarea name="trabajo" required></textarea></label>
+        <label>Observaciones:<textarea name="observaciones"></textarea></label>
+        <label>Subir imágenes:<input type="file" name="imagenes" accept="image/*" multiple></label>
+        <label>Subir video (opcional):<input type="file" name="video" accept="video/*"></label>
+        <label>Firma del cliente:</label>
+        <canvas id="firmaCanvas" width="300" height="150" style="border:1px solid #000;"></canvas>
+        <button type="button" onclick="borrarFirma()">Borrar Firma</button>
+        <input type="submit" value="Enviar">
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
